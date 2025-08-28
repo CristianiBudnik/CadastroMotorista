@@ -43,3 +43,11 @@ Este projeto foi criado para **fixar conceitos de Java**, como:
 1. Clone este repositório:
    ```bash
    git clone https://github.com/SEU_USUARIO/NOME_DO_REPO.git
+
+2. Abra o projeto em uma IDE de sua preferência com suporte ao Java.
+3. Compile e execute a classe CadastroMain.java.
+4. Interaja pelo console escolhendo as opções do menu.
+
+## Autor
+
+Projeto desenvolvido por Cristiani Budnik, como parte dos estudos em Java Programação Orientada a Objetos.
