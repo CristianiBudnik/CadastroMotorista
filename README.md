@@ -48,6 +48,6 @@ Este projeto foi criado para **fixar conceitos de Java**, como:
 3. Compile e execute a classe CadastroMain.java.
 4. Interaja pelo console escolhendo as opções do menu.
 
-## Autor
+## ✨ Autor
 
 Projeto desenvolvido por Cristiani Budnik, como parte dos estudos em Java Programação Orientada a Objetos.
