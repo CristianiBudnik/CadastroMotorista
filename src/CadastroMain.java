@@ -39,8 +39,7 @@ public class CadastroMain {
                     String categoriaDaCarteira = leia.nextLine();
 
 
-                    // Agora vamos criar um endereço para o motorista
-                    System.out.println("\n--- Cadastro de Endereço ---");
+                    System.out.println("\n--- Cadastro de Endereço ---"); //Cria um cadastro de endereço
                     System.out.print("Cidade: ");
                     String cidade = leia.nextLine();
 
@@ -61,8 +60,8 @@ public class CadastroMain {
                     System.out.print("CEP: ");
                     int cep = leia.nextInt();
 
-                    //Criando um caminhao para o motorista
-                    System.out.println ("---------- Cadastro de caminhão ----------");
+            
+                    System.out.println ("---------- Cadastro de caminhão ----------"); //Cria um cadastro de caminhão
 
                     System.out.print("Modelo do Caminhao: ");
                     String modeloCaminhao = leia.nextLine();
@@ -97,11 +96,11 @@ public class CadastroMain {
 
                     // Criando o objeto Endereco
                     Endereco endereco = new Endereco(cidade, estado, bairro, nomeDaRua, numeroDaCasa, cep);
-
+                    //Criando o objeto caminhão
                     Caminhao caminhao = new Caminhao(modeloCaminhao, carroceria, renavam,anoDeFabricacao, quilometragem, totalDeViagens, endereco, placa);
 
 
-                    // Agora sim, criamos o objeto Motorista usando as variáveis preenchidas
+                    // Criando o objeto motorista
                     Motorista motorista = new Motorista (nome, categoriaDaCarteira, cpf, rg, numeroDaCarteira, endereco, caminhao);
 
                     // Adiciona o motorista à lista
@@ -137,23 +136,23 @@ public class CadastroMain {
 
                     Motorista motoristaParaAtualizar = null; // Variável para guardar o motorista encontrado
 
-                    // 1. Procurar o motorista na lista usando um loop
+                    //Procura o motorista na lista usando um loop
                     for (Motorista m : motoristas) {
                         // Se o CPF do motorista na lista for igual ao CPF digitado
                         if (m.getCpf().equals(cpfBusca)) {
                             motoristaParaAtualizar = m; // Guarda a referência do objeto encontrado
-                            break; // Sai do loop para economizar tempo
+                            break;
                         }
                     }
 
-                    // 2. Usar o if-else para verificar se o motorista foi encontrado
+                    //Verifica se o motorista foi encontrado
                     if (motoristaParaAtualizar != null) {
                         System.out.println("Motorista '" + motoristaParaAtualizar.getNome() + "' encontrado!");
 
                         System.out.print("Digite o novo nome (ou pressione Enter para manter o atual): ");
                         String novoNome = leia.nextLine();
                         if (!novoNome.isEmpty()) {
-                            motoristaParaAtualizar.setNome(novoNome); // Usando o método set
+                            motoristaParaAtualizar.setNome(novoNome);
                         }
 
                         System.out.print("Digite a nova categoria da carteira (ou Enter): ");
@@ -171,7 +170,7 @@ public class CadastroMain {
                         System.out.println("\nMotorista atualizado com sucesso!");
 
                     } else {
-                        // Caso a busca tenha falhado
+                        
                         System.out.println("Erro: Motorista com CPF " + cpfBusca + " não encontrado.");
                     }
                     break;
@@ -183,21 +182,21 @@ public class CadastroMain {
 
                     Motorista motoristaParaRemover = null;
 
-                    // 1. Procurar o motorista na lista
+                    
                     for (Motorista m : motoristas) {
                         if (m.getCpf().equals(cpfExclusao)) {
-                            motoristaParaRemover = m; // Encontrou o objeto
+                            motoristaParaRemover = m; 
                             break;
                         }
                     }
 
-                    // 2. Usar o if-else para verificar se encontrou o motorista
+                    
                     if (motoristaParaRemover != null) {
-                        // 3. Chamar o método remove()
+                        
                         motoristas.remove(motoristaParaRemover);
                         System.out.println("Motorista com CPF " + cpfExclusao + " excluído com sucesso!");
                     } else {
-                        // 4. Feedback de erro
+                        
                         System.out.println("Erro: Motorista com CPF " + cpfExclusao + " não encontrado.");
                     }
                     break;
@@ -214,4 +213,5 @@ public class CadastroMain {
 
         leia.close();
     }
+
 }
